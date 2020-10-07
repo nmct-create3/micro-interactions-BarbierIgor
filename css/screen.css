@@ -39,6 +39,9 @@
     --global-color-neutral-xxx-dark: #35374d;
     --global-color-neutral-xxxx-dark: #20223a;
 
+    --global-color-error: red;
+    --global-input-error-borderColor: red;
+
     /* global page settings */
     --global-html-color: var(--global-color-neutral-xxxx-dark);
     --global-html-backgroundColor: var(--global-color-neutral-xxxx-light);
@@ -678,6 +681,11 @@ more padding on the right to avoid overlap
     padding-bottom: 0;
 }
 
+.has-error{
+    --label-color: var(--global-color-error);
+    --input-borderColor: var(--global-input-error-borderColor);
+}
+
 /*
     Component: Button
     ---
@@ -935,6 +943,45 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
+
+
+.c-toggle-password__icon{
+    width: 24px;
+    height: 24px;
+    fill: var(--global-color-neutral-dark);
+}
+
+.c-toggle-password__icon--hide{
+    display: none;
+}
+
+.c-password-container{
+    position: relative;
+    display: block;
+}
+
+.c-toggle-password{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.c-toggle-password__label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--hide{
+    display: block;
+}
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show{
+    display: none;
+}
 
 /*------------------------------------*\
 #UTILITIES
